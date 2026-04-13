@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Instância do Axios com a URL base da API
 const api = axios.create({
-  baseURL: "https://farmacia-nest.onrender.com/",
+ baseURL: import.meta.env.VITE_API_URL
 });
 
 // Função para Consultar

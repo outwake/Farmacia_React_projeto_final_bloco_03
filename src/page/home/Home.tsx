@@ -7,7 +7,7 @@ function Home() {
         <div className="bg-cyan-100 flex justify-center items-center p-24">
             <div className="container grid grid-cols-1 md:grid-cols-2 text-black">
                 <div className="flex justify-center pb-4 md:pb-0 order-first md:order-last">
-                    <img src="./src/assets/Imagem_hero.png" alt="Imagem da Pagina Home" className="w-1/2 md:w-2/3" />
+                    <img src="https://ik.imagekit.io/Outwake/imagens/produtos_farmacia/Imagem_hero.png" alt="Imagem da Pagina Home" className="w-1/2 md:w-2/3" />
                 </div>
 
             <div className="flex flex-col gap-4 items-center justify-center py-4 text-center md:text-left order-last md:order-first">

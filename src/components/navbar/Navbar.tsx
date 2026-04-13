@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className=" bg-indigo-900 flex items-center justify-around px-6 py-3 gap-6 shadow-lg">
       <Link to="/" className="flex items-center">
-        <img src="./src/assets/Icon_Farmacia.png" alt="" className="w-46" />
+        <img src="https://ik.imagekit.io/Outwake/imagens/produtos_farmacia/Icon_Farmacia.png" alt="" className="w-46" />
       </Link>
       <div className="flex flex-1 max-w-md">
         <input

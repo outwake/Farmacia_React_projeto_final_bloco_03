@@ -19,7 +19,7 @@ function App() {
    <ToastContainer/>
    <BrowserRouter>
    <Navbar/>
-   <div className="min-h-[80vh]">
+   <div className="min-h-[80vh] bg-cyan-100">
     <Routes>
     <Route path="/" element= {<Home/>} />
     <Route path="/categorias" element={<ListarCategoria />} />

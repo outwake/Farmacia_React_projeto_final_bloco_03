@@ -27,6 +27,9 @@ function Navbar() {
         <Link to="/produtos" className="hover:text-white transition-colors">
           Produtos
         </Link>
+        <Link to="/cadastrarproduto" className="hover:text-white transition-colors">
+          Cadastrar Produtos
+        </Link>
         <Link to="/categorias" className="hover:text-white transition-colors">
           Categorias
         </Link>

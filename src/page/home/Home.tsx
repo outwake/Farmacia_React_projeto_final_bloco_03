@@ -22,11 +22,11 @@ function Home() {
                             <Link to='/cadastrarcategoria' className='hover:underline'> Nova Categoria </Link>
                          </div>
                          
-                         {/* Para adicionar produto
+                         
                         <div className="rounded text-white 
                              border-indigo-800 bg-indigo-900 border-solid border-2 py-2 px-4">
                             <Link to='/cadastrarproduto' className='hover:underline'> Novo Produto </Link>
-                         </div>*/}
+                         </div>
                     </div>
             </div>
             </div>

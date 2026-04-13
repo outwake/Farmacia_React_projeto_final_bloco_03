@@ -29,6 +29,7 @@ function FormProduto() {
       await buscar(`/produtos/${id}`, setProduto);
     } catch (error: any) {
       if (error.toString().includes("401")) {
+         ToastAlerta("Erro ao procurar a Produto!", "erro");
       }
     }
   }
@@ -36,7 +37,7 @@ function FormProduto() {
  
     async function buscarCategoriaPorId(id: string) {
         try {
-     await buscar(`/categorias/${id}`, setCategoria); // era /categoria/${id}
+     await buscar(`/categorias/${id}`, setCategoria); 
      } catch (error: any) {
         ToastAlerta("Erro ao procurar a categoria!", "erro");
      }
@@ -112,7 +113,7 @@ function FormProduto() {
   const carregandoCategoria = categoria.nome === "";
 
   return (
-    <div className="container flex flex-col mx-auto my-10 items-center">
+    <div className="container flex flex-col mx-auto my-10 items-center tracking-widest ">
       <h1 className="text-4xl text-center my-8">
         {id !== undefined ? "Editar Produto" : "Cadastrar Produto"}
       </h1>
@@ -125,30 +126,33 @@ function FormProduto() {
             className="w-28 h-28 rounded-full object-cover border-4 border-indigo-400"
           />
         </div>
+
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Título do Produto</label>
+          <label className="text-sm text-gray-600 font-medium" htmlFor="titulo">Título do Produto</label>
           <input
             type="text"
             placeholder="Nome"
             name="nome"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-400"
             value={produto.nome}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
+
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Detalhes do Produto</label>
+          <label className="text-sm text-gray-600 font-medium" htmlFor="titulo">Detalhes do Produto</label>
           <input
             type="text"
             placeholder="Preco"
             name="preco"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-400"
             value={produto.preco}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
+
         <div>
               <label className="text-sm text-gray-600 font-medium">URL da Foto</label>
               <input
@@ -160,11 +164,11 @@ function FormProduto() {
               />
             </div>
         <div className="flex flex-col gap-2">
-          <p>Categoria do Produto</p>
+          <p className="text-sm text-gray-600 font-semibold">Categoria do Produto</p>
           <select
             name="categoria"
             id="categoria"
-            className="border p-2 border-slate-800 rounded"
+            className="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-400"
             onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
           >
             <option value="" selected disabled>

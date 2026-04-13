@@ -3,6 +3,7 @@ import { buscar } from "../../../services/Service";
 import { SyncLoader } from "react-spinners";
 import CardProduto from "../cardproduto/CardProduto";
 import type Produto from "../../../models/Produto";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListarProduto() {
 
@@ -19,8 +20,12 @@ function ListarProduto() {
     try {
       setIsLoading(true);
 
+
       await buscar("/produtos", setProdutos);
+      ToastAlerta("Produtos encontrados com sucesso!", "sucesso")
+      
     } catch (error: any) {
+         ToastAlerta("Erro ao procurar o produto!", "erro");
       
     } finally {
       setIsLoading(false);
@@ -39,7 +44,7 @@ function ListarProduto() {
         <div className="container flex flex-col">
           {!isLoading && produtos.length === 0 && (
             <span className="text-3xl text-center my-8">
-              Nenhuma Produto foi encontrado!
+              Nenhum Produto foi encontrado!
             </span>
           )}
 

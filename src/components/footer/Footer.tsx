@@ -12,7 +12,7 @@ function Footer() {
       <div className=" container px-80 flex justify-around items-center py-4">
         <div className="flex flex-col justify-center items-center mx-10">
         <p className=" text-lg font-bold">
-          SuperGeek | Copyright: {data}
+          Farmacia do Povo | Copyright: {data}
         </p>
         <p className="text-lg"> Acesse Minhas redes sociais</p>
         </div>

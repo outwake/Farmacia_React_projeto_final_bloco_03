@@ -11,7 +11,11 @@ function Home() {
                 </div>
 
             <div className="flex flex-col gap-4 items-center justify-center py-4 text-center md:text-left order-last md:order-first">
-             <h2 className="text-3xl md:text-5xl font-bold">Seja Bem Vinde!</h2>
+             <h2 className="text-3xl md:text-5xl font-bold tracking-tighter">Seja Bem Vinde à
+               <br></br> <span className="text-indigo-900 text-8xl">Farma</span>
+                <span className="text-red-600 text-6xl">Povo!</span>
+             </h2>
+             
                 <p className="text-base md:text-xl">
                  Aqui você encontra Medicamentos e Cosméticos!
                  </p>

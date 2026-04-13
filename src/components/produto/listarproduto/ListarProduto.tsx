@@ -22,7 +22,6 @@ function ListarProduto() {
 
 
       await buscar("/produtos", setProdutos);
-      ToastAlerta("Produtos encontrados com sucesso!", "sucesso")
       
     } catch (error: any) {
          ToastAlerta("Erro ao procurar o produto!", "erro");

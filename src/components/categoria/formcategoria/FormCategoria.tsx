@@ -3,6 +3,7 @@ import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { useNavigate, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type Categoria from "../../../models/Categoria";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormCategoria() {
 
@@ -18,7 +19,7 @@ function FormCategoria() {
       await buscar(`/categorias/${id}`, setCategoria);
     } catch (error: any) {
       if (error.toString().includes("401")) {
-        alert("Categoria não encontrada!");
+        ToastAlerta("Categoria não encontrada!", "erro");
       }
     } finally {
       setIsLoading(false);
@@ -46,12 +47,12 @@ function FormCategoria() {
 
     if (id !== undefined) {
       await atualizar("/categorias", categoria, setCategoria);
-      alert("Categoria atualizada com sucesso!");
+      ToastAlerta("Categoria atualizada com sucesso!", "sucesso");
     } else {
       // Envia apenas os campos necessários, sem o id
       const { id: _, ...novaCategoria } = categoria;
       await cadastrar("/categorias", novaCategoria, setCategoria);
-      alert("Categoria cadastrada com sucesso!");
+      ToastAlerta("Categoria cadastrada com sucesso!", "sucesso");
     }
 
     retornar();

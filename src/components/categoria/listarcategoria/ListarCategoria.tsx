@@ -3,6 +3,7 @@ import type Categoria from "../../../models/Categoria";
 import { buscar } from "../../../services/Service";
 import CardCategoria from "../cardcategoria/CardCategoria";
 import { SyncLoader } from "react-spinners";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 
 function ListarCategoria() {
@@ -30,7 +31,7 @@ function ListarCategoria() {
             await buscar('/categorias', setCategorias);
         } catch(error: any){
             if(error.toString().includes('401')){
-                alert('Não há categorias a serem listadas!!')
+                ToastAlerta('Não há categorias a serem listadas!!', 'erro')
             }
         }finally{
             setIsLoading(false);

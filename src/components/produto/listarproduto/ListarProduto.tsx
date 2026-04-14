@@ -34,12 +34,17 @@ function ListarProduto() {
 
   return (
     <>
+    <div className="flex justify-center m-10 -tracking-widest">
+          <h1 className=" text-black text-4xl "> PRODUTOS DISPONÍVEIS </h1>
+         <CaretDownIcon size={40} />
+       </div>
       {isLoading && (
         <div className="flex justify-center w-full my-8">
           <SyncLoader color="#312e81" size={32} />
         </div>
       )}
 
+        
       <div className="flex justify-center w-full my-4">
         <div className="container flex flex-col">
           {!isLoading && produtos.length === 0 && (
@@ -48,10 +53,7 @@ function ListarProduto() {
             </span>
           )}
 
-        <div className="flex justify-center mb-10 -tracking-widest">
-          <h1 className=" text-black text-4xl "> PRODUTOS DISPONIVEIS </h1>
-         <CaretDownIcon size={40} />
-       </div>
+      
           <div
             className="grid grid-cols-1 md:grid-cols-2 
                                     lg:grid-cols-3 gap-8"

@@ -4,6 +4,7 @@ import { buscar } from "../../../services/Service";
 import CardCategoria from "../cardcategoria/CardCategoria";
 import { SyncLoader } from "react-spinners";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import { CaretDownIcon } from "@phosphor-icons/react";
 
 
 function ListarCategoria() {
@@ -30,19 +31,24 @@ function ListarCategoria() {
 
             await buscar('/categorias', setCategorias);
         } catch(error: any){
-            if(error.toString().includes('401')){
+           
                 ToastAlerta('Não há categorias a serem listadas!!', 'erro')
-            }
         }finally{
             setIsLoading(false);
         }
     }
 
   return (
+
     <>
+            <div className="flex justify-center m-10 -tracking-widest">
+                                <h1 className=" text-black text-4xl "> CATEGORIAS </h1>
+                                <CaretDownIcon size={40} />
+            </div>
+
             {
                 isLoading && (
-                    <div className="flex justify-center w-full my-8">
+                    <div className="flex justify-center w-full my-16">
                         <SyncLoader
                             color="#312e81"
                             size={32}
@@ -50,7 +56,9 @@ function ListarCategoria() {
                     </div>
                 )
             }
+            
             <div className="flex justify-center w-full my-4">
+                
                 <div className="container flex flex-col">
                    {
                        (!isLoading && categorias.length === 0) &&(
@@ -60,8 +68,10 @@ function ListarCategoria() {
                        )
                     }
 
+                    
                     <div className="grid grid-cols-1 md:grid-cols-2 
                                     lg:grid-cols-3 gap-8">
+                    
                             {
                              categorias.map((categoria)=>(
                                  <CardCategoria key={categoria.id} categoria ={categoria} />

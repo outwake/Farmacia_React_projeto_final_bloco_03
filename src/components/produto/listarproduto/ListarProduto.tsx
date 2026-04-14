@@ -4,6 +4,7 @@ import { SyncLoader } from "react-spinners";
 import CardProduto from "../cardproduto/CardProduto";
 import type Produto from "../../../models/Produto";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import { CaretDownIcon } from "@phosphor-icons/react";
 
 function ListarProduto() {
 
@@ -47,6 +48,10 @@ function ListarProduto() {
             </span>
           )}
 
+        <div className="flex justify-center mb-10 -tracking-widest">
+          <h1 className=" text-black text-4xl "> PRODUTOS DISPONIVEIS </h1>
+         <CaretDownIcon size={40} />
+       </div>
           <div
             className="grid grid-cols-1 md:grid-cols-2 
                                     lg:grid-cols-3 gap-8"

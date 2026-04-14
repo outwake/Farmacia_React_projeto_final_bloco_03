@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"
+import ListarProduto from "../../components/produto/listarproduto/ListarProduto"
 
 function Home() {
   return (
+   <>
     <div className="bg-white flex justify-center items-center px-6 py-16 md:p-24 min-h-screen">
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 text-black">
         
@@ -45,6 +47,11 @@ function Home() {
 
       </div>
     </div>
+    <div className="">
+      <hr className="border-t border-gray-200 shadow-2xl my-8" />
+    <ListarProduto/>
+    </div>
+    </> 
   )
 }
 
